@@ -18,7 +18,7 @@
 		<p>Your password is: <?php echo $password; ?></p> 
 		<form method="POST" action="index.php">
 			
-			<label name="">Number of words</label>
+			<label for="numofwords">Number of words</label>
 			<select name="count">
 				<option value="1">1</option>
 				<option value="2">2</option>
@@ -32,13 +32,13 @@
 				<option value="10">10</option>
 			</select>
 			<br />
-			<label name="">Uppercase first letter?</label>
+			<label for="uppercase">Uppercase first letter?</label>
 			<input type="checkbox" name="uppercase" />
 			<br />
-			<label name="">Use a symbol?</label>
+			<label for="symbol">Use a symbol?</label>
 			<input type="checkbox" name="symbol" />
 			<br />
-			<label name="">Include a number?</label>
+			<label for="number">Include a number?</label>
 			<input type="checkbox" name="number" />
 			<br />
 			<input type="submit" name ="submit" value="submit" class="btn btn-default" />

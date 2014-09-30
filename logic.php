@@ -1,10 +1,12 @@
 	<?php
 	
-		//select a random item from an array and return it
+		//function that selects a random item from an array and returns it
 		function getRandom($array){
 			$max = count($array)-1;
-			return $array[rand(0,$max)];
+			// use rtrim to remove extra white space from end of any words
+			return rtrim($array[rand(0,$max)]);	
 		}
+		
 	
 
 		// Figure out what options were selected
@@ -36,10 +38,9 @@
 		// randomly select words from words.txt	
 		if ($wordlist= file("words.txt")){ 
 			for ($i=0; $i < $count; $i++){
-				//$max=count($wordlist)-1;
-				//$word=$wordlist[rand(0,$max)];
 				//array_push($selectedWords,$word);
 				$selectedWords[$i]=getRandom($wordlist);  
+
 			}
 		}
 
@@ -54,7 +55,7 @@
 		$symbols=["@","#","%","&","!","*","$"];
 		if ($symbol){
 			$selectedSymbol = getRandom($symbols);
-			$symWord = getRandom($selectedWords).$selectedSymbol;
+			$symWord = getRandom($selectedWords).$selectedSymbol;  //leaves extra space
 			echo $symWord;
 			
 		}
@@ -64,7 +65,7 @@
 		
 		}
 		
-	$password = implode(" ", $selectedWords);  //the final password
+	$password = implode("-", $selectedWords);  //the final password
 		
 	?>
 	

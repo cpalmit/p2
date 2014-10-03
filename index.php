@@ -17,7 +17,7 @@
 		the XKCD Style Password Generator, creating passwords so you don't have to since 2014. Not only are they strong due 
 		to their length, but they're also easier to remember since they use real words. 
 		Visit <a href="http://xkcd.com/936/">XKCD</a> for more information.</p>
-		<p>Your password is: <?php echo $password; ?></p> 
+		<div class="password">Your password is: <?php echo $password; ?></div> 
 		
 		<form method="POST" action="index.php">
 			
@@ -32,10 +32,9 @@
 				<option value="7">7</option>
 				<option value="8">8</option>
 				<option value="9">9</option>
-				<option value="10">10</option>
 			</select>
 			<br />
-			<label for="uppercase">Uppercase first letter?</label>
+			<label for="uppercase">Uppercase first letter of each word?</label>
 			<input type="checkbox" name="uppercase" id="uppercase" />
 			<br />
 			<label for="symbol">Use a symbol?</label>

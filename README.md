@@ -11,7 +11,7 @@ The application should allow the user to specify how many words to use, whether 
 Link to [demo]()
 
 ##Details
-No additional details
+Words.txt comes from the Mac OS word list as shown in section.
 
 ##Outside Code
 Bootstrap: [http://getbootstrap.com/](http://getbootstrap.com/)

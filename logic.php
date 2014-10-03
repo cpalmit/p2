@@ -7,6 +7,7 @@
 		return rtrim($array[rand(0,$max)]);	
 	}
 	
+
 	// Figure out what options were selected
 	if(isset($_POST["uppercase"])) {
 		$uppercase= true;
@@ -32,14 +33,12 @@
 		if(($count > 9) || ($count < 1)){
 			$password =  "Hey, stop trying to hack my form!"; //only 1-9 numbers allowed
 		} else {
-		
 			//array to hold password words
 			$selectedWords = [];   
 	
-			// randomly select words from words.txt	
+			// randomly select wor ds from words.txt	
 			if($wordlist= file("words.txt")){ 
 				for ($i=0; $i < $count; $i++){
-					//array_push($selectedWords,$word);
 					$selectedWords[$i]=getRandom($wordlist);  
 				}
 			}
@@ -51,21 +50,24 @@
 				}
 			}
 	
-			// add a random symbol to end of first word
-			$symbols=["@","#","%","&","!","*","$"];
+			$key=array_rand($selectedWords);
+			$symbols=["@","#","%","&","!","*","$","?"];		
+			// add a random symbol to randomly selected word
 			if($symbol){
 				$selectedSymbol = getRandom($symbols);  //get a random symbol
-				//$symWord = getRandom($selectedWords).$selectedSymbol; // add symbol to random selected word
-				$selectedWords[0]=$selectedWords[0].$selectedSymbol;
+				$selectedWords[$key]= $selectedWords[$key].$selectedSymbol;
 			}
 	
-			// add a random number from 1-100 to end of first word
+			// add a random number from 1-100 to randomly selected word... or same word
+			// as the symbol word to keep the two together for easier recall
 			if($number){
-				$selectedNumber=rand(0,100);  //random number between 0-100
-				$selectedWords[0]=$selectedWords[0].$selectedNumber;
+				$selectedNumber=rand(0,100); //random number between 0-100
+				$selectedWords[$key]=$selectedWords[$key].$selectedNumber;
 			}
 	
 			$password = implode("-", $selectedWords);  //the final password
 		}
+	} else {
+		$password = "Waiting to receive input...";  //initial state
 	}
-?>
+//?>

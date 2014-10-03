@@ -8,7 +8,7 @@ Become comfortable with PHP by creating a password generator as described by [XK
 The application should allow the user to specify how many words to use, whether to include a number, and whether to include a symbol.
 
 ##Demo
-Link to [demo]()
+Link to [demo](http://screencast.com/t/39kQ7SiKv5n5)
 
 ##Details
 Words.txt comes from the Mac OS word list as shown in section.

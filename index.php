@@ -11,15 +11,18 @@
 <body>
 	<div class="container">
 	
-	<!-- Don't forget: Landing page includes a description of your app and 
-	what a xkcd password is (assume an unfamiliar audience). -->
-	
 		<h1>XKCD Style Password Generator</h1> 
+		
+		<p>Tired of coming up with new, secure passwords for every application? Now you don't have to—introducing 
+		the XKCD Style Password Generator, creating passwords so you don't have to since 2014. Not only are they strong due 
+		to their length, but they're also easier to remember since they use real words. 
+		Visit <a href="http://xkcd.com/936/">XKCD</a> for more information.</p>
 		<p>Your password is: <?php echo $password; ?></p> 
+		
 		<form method="POST" action="index.php">
 			
 			<label for="numofwords">Number of words</label>
-			<select name="count">
+			<select name="count" id="numofwords">
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3" selected="selected">3</option>
@@ -33,18 +36,18 @@
 			</select>
 			<br />
 			<label for="uppercase">Uppercase first letter?</label>
-			<input type="checkbox" name="uppercase" />
+			<input type="checkbox" name="uppercase" id="uppercase" />
 			<br />
 			<label for="symbol">Use a symbol?</label>
-			<input type="checkbox" name="symbol" />
+			<input type="checkbox" name="symbol" id="symbol"/>
 			<br />
 			<label for="number">Include a number?</label>
-			<input type="checkbox" name="number" />
+			<input type="checkbox" name="number" id="number" />
 			<br />
-			<input type="submit" name ="submit" value="submit" class="btn btn-default" />
+			<input type="submit" name ="submit" value="Give me password" class="btn btn-default" />
 			
 		</form>
-	
+		
 	</div>
 </body>
 </html>
